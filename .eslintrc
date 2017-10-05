@@ -1,0 +1,17 @@
+{
+"rules": {
+    "no-magic-numbers": ["warn", { "ignoreArrayIndexes": true, "ignore": [0,1,-1]}],
+    "max-len": ["error", 120],
+    "indent": ["error", 2 ,{ "SwitchCase": 1 }],
+  },
+  "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 8
+  },
+  "env": {
+      "es6": true,
+      "browser": true,
+      "node": true
+  },
+  "extends": "eslint:recommended"
+}
