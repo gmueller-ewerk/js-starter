@@ -3,6 +3,8 @@
     "no-magic-numbers": ["warn", { "ignoreArrayIndexes": true, "ignore": [0,1,-1]}],
     "max-len": ["error", 120],
     "indent": ["error", 2 ,{ "SwitchCase": 1 }],
+    "linebreak-style": [2, "unix"],
+    "semi": [2,"always"]
   },
   "parserOptions": {
       "sourceType": "module",
