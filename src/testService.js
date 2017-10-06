@@ -19,6 +19,7 @@ export const loadDeputies = () => {
 };
 
 const renderList = (deputies) => {
+  const profiles = deputies.profiles;
   let tableItems = `<tr>
          <th>Name</th>
          <th>Gender</th>
@@ -26,14 +27,16 @@ const renderList = (deputies) => {
          <th>Party</th>
          <th>Constituency</th>
      </tr>`;
-  deputies.profiles.forEach((profile) =>
+  for (const {party, personal: {first_name, last_name, gender, birthyear}, constituency: {name: con_name="-"} }
+    of profiles) {
     tableItems += `<tr>
-           <td>${profile.personal.first_name} ${profile.personal.last_name}</td>
-           <td>${profile.personal.gender}</td>
-           <td>${profile.personal.birthyear}</td>
-           <td>${profile.party}</td>
-           <td>${profile.constituency.name}</td>
-       </tr>`);
+          <td>${first_name} ${last_name}</td>
+          <td>${gender}</td>
+          <td>${birthyear}</td>
+          <td>${party}</td>
+          <td>${con_name}</td>
+       </tr>`;
+  }
   document.getElementById("deputies").innerHTML = tableItems;
   addClickListener();
 };
