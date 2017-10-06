@@ -3,7 +3,7 @@
     ["env", {
       "targets": {
         "node": "current",
-        "uglify": true
+        "browsers": ["last 5 versions"]
       }
     }]
   ]
